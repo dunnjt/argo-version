@@ -1,0 +1,2 @@
+# argo-version
+version
