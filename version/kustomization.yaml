@@ -4,4 +4,4 @@ images:
 - name: devopsjourney1/mywebapp
   newTag: a_new_update_with_git_link
 resources:
-- ../../base
+- ../base

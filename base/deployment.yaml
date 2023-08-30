@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: backplane-example-service
+spec:
+  replicas: 1
+  template:
+    spec: # Pod spec
+      containers:
+      - name: backplane-example-service
+        image: "devopsjourney1/mywebapp:latest"
+        ports:
+        - containerPort: 8080
+        envFrom:
+        - configMapRef:
+            name: backplane-example-service
+        resources:
+          requests:
+            memory: "128Mi" 
+            cpu: "1"    # 500milliCPUs (1/2 CPU)
+          limits:
+            memory: "512Mi"
+            cpu: "2"
